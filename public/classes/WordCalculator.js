@@ -26,14 +26,7 @@ export class WordCalculator {
             temp.push({ word: word, frequency: frequency[word] });
         }
         temp.sort((a, b) => {
-            if (a.frequency > b.frequency) {
-                return -1;
-            }
-            if (a.frequency < b.frequency) {
-                return 1;
-            }
-            // names must be equal
-            return 0;
+            return b.frequency - a.frequency || a.word.localeCompare(b.word);
         });
         console.log(temp);
         return [];

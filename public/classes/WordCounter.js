@@ -6,20 +6,16 @@ export class WordCounter {
         this.words = this.text.split(" ");
     }
     getWord() {
-        if (this.count) {
-            return this.words[this.count];
-        }
-        else {
-            return this.words[0];
-        }
+        return this.words[this.count];
     }
     getFrequency() {
         let counter = 0;
         if (this.word != undefined) {
-            for (let i = 0; i < this.words.length; i++) {
-                if (this.words[i] === this.word) {
+            for (let word in this.words) {
+                if (word === this.word) {
                     counter++;
                 }
+                console.log(word);
             }
             return counter;
         }
