@@ -4,11 +4,8 @@ import { WordCounter } from "./classes/WordCounter.js";
 const textToTest =
   "This is an arbitrary string this is is always believe in yourself who is who";
 const wordToTest = "this";
-const counter = new WordCounter(textToTest, 2, "is");
 const calculator = new WordCalculator();
 
-// console.log(counter.getWord());
-// console.log(counter.getFrequency());
 console.log(
   "The most amount of times a word occurs is:",
   calculator.calculateHighestFrequency(textToTest)

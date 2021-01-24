@@ -1,4 +1,5 @@
 import { WordFrequencyAnalyzer } from "../interfaces/WordFrequencyAnalyzer.js";
+import { WordCounter } from "./WordCounter.js";
 
 export class WordCalculator implements WordFrequencyAnalyzer {
   constructor() {}
@@ -24,17 +25,18 @@ export class WordCalculator implements WordFrequencyAnalyzer {
   }
 
   calculateMostFrequentNWords(text: string, n: number) {
-    let temp = [];
+    let temp: WordCounter[] = [];
     const frequency = this.splitAndCountWords(text);
     for (const word in frequency) {
-      temp.push({ word: word, frequency: frequency[word] });
+      let counter = new WordCounter();
+      counter.setWord(word);
+      counter.setFrequency(frequency[word]);
+      temp.push(counter);
     }
     temp.sort((a, b) => {
       return b.frequency - a.frequency || a.word.localeCompare(b.word);
     });
-
-    console.log(temp);
-    return [];
+    return temp;
   }
 
   splitAndCountWords(text: string) {
