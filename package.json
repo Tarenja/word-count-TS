@@ -1,0 +1,29 @@
+{
+  "name": "word-count-ts",
+  "version": "1.0.0",
+  "description": "Typescript word count assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tarenja/word-count-TS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tarenja/word-count-TS/issues"
+  },
+  "homepage": "https://github.com/Tarenja/word-count-TS#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.20",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.4.4",
+    "typescript": "^4.1.3"
+  }
+}

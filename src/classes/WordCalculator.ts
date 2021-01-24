@@ -36,7 +36,7 @@ export class WordCalculator implements WordFrequencyAnalyzer {
     temp.sort((a, b) => {
       return b.frequency - a.frequency || a.word.localeCompare(b.word);
     });
-    return temp;
+    return temp.slice(0, n);
   }
 
   splitAndCountWords(text: string) {

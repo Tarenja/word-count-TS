@@ -1,22 +1,40 @@
 import { WordCalculator } from "./classes/WordCalculator.js";
-import { WordCounter } from "./classes/WordCounter.js";
 
 const textToTest =
   "This is an arbitrary string this is is always believe in yourself who is who";
 const wordToTest = "this";
 const calculator = new WordCalculator();
+const topNumberOfWords = 5;
 
-console.log(
-  "The most amount of times a word occurs is:",
-  calculator.calculateHighestFrequency(textToTest)
+const highestFrequency = `The most amount of times a word occurs is: ${calculator.calculateHighestFrequency(
+  textToTest
+)}`;
+
+const frequencyForWord = `The amount of times the word '${wordToTest}' appears in the tested text is: ${calculator.calculateFrequencyForWord(
+  textToTest,
+  wordToTest
+)}`;
+
+const counter = calculator.calculateMostFrequentNWords(
+  textToTest,
+  topNumberOfWords
 );
-console.log(
-  `The amount of times the word '${wordToTest}' appears in the tested text is: ${calculator.calculateFrequencyForWord(
-    textToTest,
-    wordToTest
-  )}`
-);
-console.log(
-  "part three",
-  calculator.calculateMostFrequentNWords(textToTest, 2)
-);
+let nWordsFrequency: string = `These are the ${topNumberOfWords} highest occuring words in this text:\n `;
+for (let i = 0; i < counter.length; i++) {
+  let word = counter[i].getWord();
+  let freq = counter[i].getFrequency();
+  nWordsFrequency += `"${word}", ${freq},\n`;
+}
+
+const container = document.getElementById("word-counter");
+const p1 = document.createElement("p");
+const p2 = document.createElement("p");
+const p3 = document.createElement("p");
+
+p1.innerText = highestFrequency;
+p2.innerText = frequencyForWord;
+p3.innerText = nWordsFrequency;
+
+container?.append(p1);
+container?.append(p2);
+container?.append(p3);

@@ -2,6 +2,9 @@
 
 Typescript word count assignment
 
+*Run npm install and then run the app with npm start.*
+*To run tests remove '.js' from all the imports and run npm t*
+
 The case: counting words.
 
 ## Introduction
